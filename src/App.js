@@ -1,25 +1,28 @@
-import logo from './logo.svg';
+import React, { useState } from 'react';
 import './App.css';
+const App = () => {
 
-function App() {
+  const [counter,setCouunter] = useState(0)
+
+  const addvalue = () =>{
+    setCouunter(counter + 1)
+  }
+  
+  const removeValue = () =>{
+    setCouunter(counter - 1)
+  }
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    <>
+    <h1>React with waleed</h1>
+    <h2>Counter Value: {counter} </h2>
+
+    <button onClick={addvalue}>Add Value {counter}</button>
+    <br />
+    <button onClick={removeValue}>Remove Value {counter}</button>
+    <p>footer: {counter}</p>
+    </>
+  )
 }
 
 export default App;
+
